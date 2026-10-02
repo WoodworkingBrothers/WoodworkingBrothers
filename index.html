@@ -13,7 +13,7 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
     background:#f5f5f5;
     color:#333;
 }
@@ -41,7 +41,7 @@ nav a:hover{
 
 header{
     height:90vh;
-    background:url("header.jpg") center center/cover no-repeat;
+    background:url('header.jpg') center center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -50,13 +50,14 @@ header{
 }
 
 .hero{
-    background:rgba(0,0,0,0.5);
+    background:rgba(0,0,0,0.55);
     padding:40px;
     border-radius:12px;
 }
 
 .hero h1{
     font-size:3rem;
+    margin-bottom:15px;
 }
 
 section{
@@ -85,40 +86,22 @@ h2{
 
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:20px;
 }
 
 .gallery img{
     width:100%;
-    height:250px;
+    height:300px;
     object-fit:cover;
-    border-radius:10px;
+    border-radius:12px;
     cursor:pointer;
     transition:0.3s;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
 }
 
 .gallery img:hover{
     transform:scale(1.03);
-}
-
-#lightbox{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.9);
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-}
-
-#lightbox img{
-    max-width:90%;
-    max-height:90%;
-    border-radius:10px;
 }
 
 input,
@@ -139,12 +122,41 @@ button{
     cursor:pointer;
 }
 
+button:hover{
+    background:#5e3d22;
+}
+
 footer{
     background:#3d2b1f;
     color:white;
     text-align:center;
     padding:30px;
-    margin-top:40px;
+    margin-top:50px;
+}
+
+#melding{
+    margin-top:15px;
+    color:green;
+    font-weight:bold;
+}
+
+#lightbox{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+#lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
 }
 </style>
 </head>
@@ -153,8 +165,7 @@ footer{
 
 <nav>
 <a href="#verhaal">Ons Verhaal</a>
-#productenProducten</a>
-#galerijGalerij</a>
+<a href="#producten">Producten</Galerij</a>
 <a href="#contact">Contact</a>
 </nav>
 
@@ -168,12 +179,13 @@ footer{
 <section id="verhaal">
 <h2>Van boom tot verhaal</h2>
 <p>
-Wij geven hout een tweede leven. Bomen uit boomgaarden en landschappen
-worden door ons verwerkt tot unieke handgemaakte producten.
+Wij geven hout een tweede leven. Bomen uit boomgaarden, landschappen en natuurgebieden
+worden door ons verwerkt tot unieke handgemaakte producten met karakter.
 </p>
 </section>
 
 <section id="producten">
+
 <h2>Onze Producten</h2>
 
 <div class="cards">
@@ -194,6 +206,7 @@ worden door ons verwerkt tot unieke handgemaakte producten.
 </div>
 
 </div>
+
 </section>
 
 <section id="galerij">
@@ -206,17 +219,12 @@ worden door ons verwerkt tot unieke handgemaakte producten.
 
 <div class="gallery">
 
-    <img src="foto1.jpg" alt="Foto 1" onclick="openLightbox(this.src)">
-
-    <img src="foto2.jpg" alt="Foto 2" onclick="openLightbox(thisopenLightbox(this.src)">
-
-box(this.src)">
-
-    <img src="foto5.jpg" 
-
-</section>
-
-<section id="contact">
+<img src="foto1.jpg" alt="Foto 1" onclick="openLightbox(this.src)">
+<img src="foto2.jpg" alt="Foto 2" onclick="openLightbox(this.src)">
+foto3.jpg
+<img src="foto4.jpg" alt="Foto 4" onclick="openLightbox(this.src)">
+<img src="foto5.jpg" alt="Foto 5" onclick="openLightbox(this.src)">
+<img src="foto6.jpg" alt="Foto 6" onclick="d="contact">
 
 <h2>Contact</h2>
 
@@ -245,22 +253,19 @@ box(this.src)">
 </div>
 
 <script>
-
 function openLightbox(src){
-    document.getElementById("lightbox").style.display = "flex";
-    document.getElementById("lightboxImage").src = src;
+    document.getElementById('lightbox').style.display='flex';
+    document.getElementById('lightboxImage').src=src;
 }
 
 function closeLightbox(){
-    document.getElementById("lightbox").style.display = "none";
+    document.getElementById('lightbox').style.display='none';
 }
 
 function verstuur(e){
     e.preventDefault();
-    document.getElementById("melding").innerHTML =
-    "Bedankt voor uw bericht!";
+    document.getElementById('melding').innerHTML='Bedankt voor uw bericht!';
 }
-
 </script>
 
 </body>
