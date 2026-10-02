@@ -13,7 +13,7 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
     background:#f5f5f5;
     color:#333;
 }
@@ -35,6 +35,10 @@ nav a{
     font-weight:bold;
 }
 
+nav a:hover{
+    color:#d4b48c;
+}
+
 header{
     height:90vh;
     background:url('header.jpg') center center/cover no-repeat;
@@ -49,6 +53,11 @@ header{
     background:rgba(0,0,0,0.55);
     padding:40px;
     border-radius:12px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
 }
 
 section{
@@ -72,181 +81,4 @@ h2{
     background:white;
     padding:20px;
     border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
-}
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.gallery img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:12px;
-    cursor:pointer;
-}
-
-.gallery img:hover{
-    opacity:0.9;
-}
-
-#lightbox{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.9);
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-}
-
-#lightbox img{
-    max-width:90%;
-    max-height:90%;
-}
-
-input, textarea{
-    width:100%;
-    padding:12px;
-    margin-bottom:10px;
-    border:1px solid #ccc;
-    border-radius:6px;
-}
-
-button{
-    background:#7b4f2a;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:6px;
-    cursor:pointer;
-}
-
-footer{
-    background:#3d2b1f;
-    color:white;
-    text-align:center;
-    padding:30px;
-}
-</style>
-
-</head>
-<body>
-
-<nav>
-<a href="#verhaal">Ons Verhaal</a>
-#productenProducten</a>
-<a href="#galerij">Galerij</a>
-ontact">Contact</a>
-</nav>
-
-<header>
-<div class="hero">
-<h1>WoodworkingBrothers</h1>
-<p>Handgemaakte producten van gered hout</p>
-</div>
-</header>
-
-<section id="verhaal">
-<h2>Van boom tot verhaal</h2>
-<p>
-Wij geven hout een tweede leven. Bomen uit boomgaarden en natuurgebieden
-krijgen bij ons een nieuw bestaan als unieke handgemaakte producten.
-</p>
-</section>
-
-<section id="producten">
-<h2>Onze Producten</h2>
-
-<div class="cards">
-<div class="card">
-<h3>Houten Kommen</h3>
-<p>Met de hand gedraaid uit lokaal hout.</p>
-</div>
-
-<div class="card">
-<h3>Snijplanken</h3>
-<p>Duurzaam en uniek.</p>
-</div>
-
-<div class="card">
-<h3>Maatwerk</h3>
-<p>Persoonlijke creaties op aanvraag.</p>
-</div>
-</div>
-
-</section>
-
-<section id="galerij">
-
-<h2>Fotogalerij</h2>
-
-<p>Klik op een foto om deze groter te bekijken.</p>
-
-<div class="gallery">
-
-<img src="foto1.jpg" alt="Foto 1" onclick="openLightbox(this.src)">
-<img src="foto2.jpg" alt="Foto 2" onclick="openLightbox(this.src)">
-<img src="foto3.jpg" alt="Foto 3" onclick="openLightbox(this.src)">
-<img src="foto4.jpg" alt="Foto 4" onclick="openLightbox(this.src)">
-<img src="foto5.jpg" alt="Foto 5" onclick="openLightbox(this.src)">
-<img src="foto6.jpg" alt="Foto 6" onclick="openLightbox(this.src)">
-
-</div>
-
-</section>
-
-<section id="contact">
-
-<h2>Contact</h2>
-
-<form onsubmit="verstuur(event)">
-
-<input type="text" placeholder="Uw naam" required>
-
-<input type="email" placeholder="Uw e-mailadres" required>
-
-<textarea placeholder="Uw bericht" rows="6" required></textarea>
-
-<button type="submit">Versturen</button>
-
-</form>
-
-<p id="melding"></p>
-
-</section>
-
-<footer>
-© 2026 WoodworkingBrothers
-</footer>
-
-<div id="lightbox" onclick="closeLightbox()">
-<img id="lightboxImage">
-</div>
-
-<script>
-
-function openLightbox(src){
-    document.getElementById('lightbox').style.display='flex';
-    document.getElementById('lightboxImage').src=src;
-}
-
-function closeLightbox(){
-    document.getElementById('lightbox').style.display='none';
-}
-
-function verstuur(e){
-    e.preventDefault();
-    document.getElementById('melding').innerHTML='Bedankt voor uw bericht!';
-}
-
-</script>
-
-</body>
-</html>
+    box-shadow:0 2px 8px rgba(0,0,
