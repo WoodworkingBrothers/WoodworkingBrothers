@@ -81,4 +81,149 @@ h2{
     background:white;
     padding:20px;
     border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Pinterest-galerij */
+
+.gallery{
+    column-count:3;
+    column-gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:auto;
+    display:block;
+    margin-bottom:20px;
+    border-radius:12px;
+    cursor:pointer;
+    break-inside:avoid;
+    box-shadow:0 3px 10px rgba(0,0,0,0.15);
+    transition:all 0.3s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.02);
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+@media(max-width:900px){
+    .gallery{
+        column-count:2;
+    }
+}
+
+@media(max-width:600px){
+    .gallery{
+        column-count:1;
+    }
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+button{
+    background:#7b4f2a;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#5e3d22;
+}
+
+footer{
+    background:#3d2b1f;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+#melding{
+    margin-top:15px;
+    color:green;
+}
+
+#lightbox{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+#lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:12px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#verhaal">Ons Verhaal</a>
+#productenProducten</a>
+<a hrefjGalerij</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<header>
+<div class="hero">
+<h1>WoodworkingBrothers</h1>
+<p>Handgemaakte producten van gered hout</p>
+</div>
+</header>
+
+<section id="verhaal">
+<h2>Van boom tot verhaal</h2>
+<p>
+Wij geven hout een tweede leven. Bomen uit boomgaarden en natuurgebieden
+krijgen bij ons een nieuw bestaan als unieke handgemaakte producten.
+</p>
+</section>
+
+<section id="producten">
+
+<h2>Onze Producten</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Houten Kommen</h3>
+<p>Met de hand gedraaid uit lokaal hout.</p>
+</div>
+
+<div class="card">
+<h3>Snijplanken</h3>
+<p>Duurzaam en uniek.</p>
+</div>
+
+<div class="card">
+<h3>Maatwerk</h3>
+<p>Persoonlijke creaties op aanvraag.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="galerij">
+
+<h2>Fotogalerij
