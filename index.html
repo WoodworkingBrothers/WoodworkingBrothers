@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>WoodworkingBrothers</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -16,8 +13,7 @@
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f5f5f5;
+    font-family:Arial, sans-serif;
     color:#333;
 }
 
@@ -25,7 +21,7 @@ nav{
     position:fixed;
     top:0;
     width:100%;
-    background:#3d2b1f;
+    background:#2f241c;
     padding:15px;
     text-align:center;
     z-index:1000;
@@ -34,33 +30,43 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    margin:0 15px;
+    margin:0 20px;
     font-weight:bold;
 }
 
-nav a:hover{
-    color:#d4b48c;
-}
-
 header{
-    height:90vh;
-    background:url('header.jpg') center center/cover no-repeat;
+    background:url('images/header.jpg') center center/cover no-repeat;
+    height:100vh;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     text-align:center;
-    color:white;
 }
 
 .hero{
     background:rgba(0,0,0,0.55);
-    padding:40px;
-    border-radius:12px;
+    padding:50px;
+    border-radius:15px;
+    color:white;
 }
 
 .hero h1{
-    font-size:3rem;
-    margin-bottom:10px;
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:1.4rem;
+    margin-bottom:25px;
+}
+
+.btn{
+    background:#8a572a;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
 }
 
 section{
@@ -70,8 +76,8 @@ section{
 }
 
 h2{
-    color:#3d2b1f;
     margin-bottom:20px;
+    color:#2f241c;
 }
 
 .cards{
@@ -81,78 +87,29 @@ h2{
 }
 
 .card{
-    background:white;
+    background:#f5f5f5;
     padding:20px;
-    border-radius:12px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    border-radius:10px;
 }
 
-/* Pinterest galerij */
-
 .gallery{
-    column-count:3;
-    column-gap:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
 }
 
 .gallery img{
     width:100%;
-    margin-bottom:20px;
-    border-radius:12px;
-    display:block;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
     cursor:pointer;
-    break-inside:avoid;
-    box-shadow:0 3px 12px rgba(0,0,0,0.15);
-    transition:all .3s ease;
-}
-
-.gallery img:hover{
-    transform:scale(1.02);
-}
-
-@media(max-width:900px){
-    .gallery{
-        column-count:2;
-    }
-}
-
-@media(max-width:600px){
-    .gallery{
-        column-count:1;
-    }
-}
-
-input,
-textarea{
-    width:100%;
-    padding:12px;
-    margin-bottom:10px;
-    border:1px solid #ccc;
-    border-radius:6px;
-}
-
-button{
-    background:#7b4f2a;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:6px;
-    cursor:pointer;
-}
-
-footer{
-    background:#3d2b1f;
-    color:white;
-    text-align:center;
-    padding:30px;
 }
 
 #lightbox{
     display:none;
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    inset:0;
     background:rgba(0,0,0,0.9);
     justify-content:center;
     align-items:center;
@@ -162,44 +119,51 @@ footer{
 #lightbox img{
     max-width:90%;
     max-height:90%;
-    border-radius:12px;
 }
 
-#melding{
-    color:green;
-    margin-top:10px;
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
 }
 
+footer{
+    background:#2f241c;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
 </style>
-
 </head>
 
 <body>
 
 <nav>
-<a href="#verhaal">Ons Verhaal</a>
-<a href="#producten">Producten</a>
-<a hrefjGalerij</a>
-<a href="#contact">Contact</a>
+    <a href="#verhaal">Ons Verhaal</a>
+    <a href="#producten">Producten</a>
+    #galerijGalerij</a>
+    <a href="#contact">Contact</a>
 </nav>
 
 <header>
+    <div class="hero">
+        <h1>WoodworkingBrothers</h1>
+        <p>Handgemaakte producten van gered hout</p>
 
-<div class="hero">
-<h1>WoodworkingBrothers</h1>
-<p>Handgemaakte producten van gered hout</p>
-</div>
-
+        <button class="btn"
+        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Neem Contact Op
+        </button>
+    </div>
 </header>
 
 <section id="verhaal">
-
 <h2>Van boom tot verhaal</h2>
 
 <p>
-Wij geven hout een tweede leven. Bomen uit boomgaarden,
-landschappen en natuurgebieden krijgen bij ons een nieuw bestaan
-als unieke handgemaakte producten.
+Wij geven bijzondere bomen een tweede leven.
+Het hout wordt met de hand verwerkt tot unieke producten met karakter.
 </p>
 
 </section>
@@ -208,4 +172,85 @@ als unieke handgemaakte producten.
 
 <h2>Onze Producten</h2>
 
-<div 
+<div class="cards">
+
+<div class="card">
+<h3>Houten Kommen</h3>
+<p>Met de hand gedraaid uit lokaal hout.</p>
+</div>
+
+<div class="card">
+<h3>Snijplanken</h3>
+<p>Duurzaam en uniek.</p>
+</div>
+
+<div class="card">
+<h3>Maatwerk</h3>
+<p>Persoonlijke creaties op aanvraag.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="galerij">
+
+<h2>Galerij</h2>
+
+<div class="gallery">
+
+<img src="images/foto1.jpg" alt="Foto 1" onclick="
+<img src="images/foto4.jpg" alt="Foto 4" onclick="openLightboxalt="Foto 6" onclick="openLightonclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<section id="contact">erstuur(event)">
+
+<input type="text"
+placeholder="Uw naam"
+required>
+
+<input type="email"
+placeholder="Uw e-mailadres"
+required>
+
+<textarea
+rows="5"
+placeholder="Uw bericht"
+required></textarea>
+
+<button class="btn" type="submit">
+Versturen
+</button>
+
+</form>
+
+<p id="melding"></p>
+
+</section>
+
+<footer>
+© 2026 WoodworkingBrothers
+</footer>
+
+<script>
+
+function openLightbox(src){
+    document.getElementById("lightbox").style.display="flex";
+    document.getElementById("lightbox-img").src=src;
+}
+
+function closeLightbox(){
+    document.getElementById("lightbox").style.display="none";
+}
+
+function verstuur(e){
+    e.preventDefault();
+    document.getElementById("melding").innerHTML =
+    "<strong>Bedankt! Uw bericht is verzonden.</strong>";
+}
+
+</script>
+
+</body>
+</html>
