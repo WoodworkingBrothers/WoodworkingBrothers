@@ -105,17 +105,17 @@ h2{
 
 /* Pinterest-stijl galerij */
 .gallery{
-    column-count:3;
-    column-gap:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
 }
 
 .gallery img{
     width:100%;
-    display:block;
-    margin-bottom:20px;
+    height:250px;
+    object-fit:cover;
     border-radius:10px;
     cursor:pointer;
-    break-inside:avoid;
     box-shadow:0 2px 10px rgba(0,0,0,.15);
     transition:0.3s;
 }
