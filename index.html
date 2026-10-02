@@ -13,7 +13,8 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
     color:#333;
 }
 
@@ -34,8 +35,12 @@ nav a{
     font-weight:bold;
 }
 
+nav a:hover{
+    color:#d4b48c;
+}
+
 header{
-    background:url('images/header.jpg') center center/cover no-repeat;
+    background:url('header.jpg') center center/cover no-repeat;
     height:100vh;
     display:flex;
     justify-content:center;
@@ -57,7 +62,6 @@ header{
 
 .hero p{
     font-size:1.4rem;
-    margin-bottom:25px;
 }
 
 .btn{
@@ -76,8 +80,8 @@ section{
 }
 
 h2{
-    margin-bottom:20px;
     color:#2f241c;
+    margin-bottom:20px;
 }
 
 .cards{
@@ -87,23 +91,43 @@ h2{
 }
 
 .card{
-    background:#f5f5f5;
+    background:white;
     padding:20px;
     border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* Pinterest galerij */
+
 .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
+    column-count:3;
+    column-gap:20px;
 }
 
 .gallery img{
     width:100%;
-    height:250px;
-    object-fit:cover;
+    margin-bottom:20px;
     border-radius:10px;
     cursor:pointer;
+    display:block;
+    break-inside:avoid;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.02);
+}
+
+@media(max-width:900px){
+    .gallery{
+        column-count:2;
+    }
+}
+
+@media(max-width:600px){
+    .gallery{
+        column-count:1;
+    }
 }
 
 #lightbox{
@@ -119,6 +143,7 @@ h2{
 #lightbox img{
     max-width:90%;
     max-height:90%;
+    border-radius:10px;
 }
 
 input,
@@ -126,6 +151,8 @@ textarea{
     width:100%;
     padding:12px;
     margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:6px;
 }
 
 footer{
@@ -140,22 +167,22 @@ footer{
 <body>
 
 <nav>
-    <a href="#verhaal">Ons Verhaal</a>
-    <a href="#producten">Producten</a>
-    #galerijGalerij</a>
-    <a href="#contact">Contact</a>
+<a href="#verhaal">Ons Verhaal</a>
+<a href="#producten">Producten</a>
+<a hrefjGalerij</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <header>
-    <div class="hero">
-        <h1>WoodworkingBrothers</h1>
-        <p>Handgemaakte producten van gered hout</p>
-
-        <button class="btn"
-        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-        Neem Contact Op
-        </button>
-    </div>
+<div class="hero">
+<h1>WoodworkingBrothers</h1>
+<p>Handgemaakte producten van gered hout</p>
+<br>
+<button class="btn"
+onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+Neem Contact Op
+</button>
+</div>
 </header>
 
 <section id="verhaal">
@@ -165,7 +192,6 @@ footer{
 Wij geven bijzondere bomen een tweede leven.
 Het hout wordt met de hand verwerkt tot unieke producten met karakter.
 </p>
-
 </section>
 
 <section id="producten">
@@ -199,25 +225,28 @@ Het hout wordt met de hand verwerkt tot unieke producten met karakter.
 
 <div class="gallery">
 
-<img src="images/foto1.jpg" alt="Foto 1" onclick="
-<img src="images/foto4.jpg" alt="Foto 4" onclick="openLightboxalt="Foto 6" onclick="openLightonclick="closeLightbox()">
-    <img id="lightbox-img" src="" alt="">
+<img src="foto1.jpg" alt="Foto 1" onclick="openLightbox(this.src)">
+<img src="foto2.jpg" alt="Foto 2" onclick="openLightbox(this.src)">
+<img src="foto3.jpg" alt="Foto 3" onclick="openLightbox(this.src)">
+<img src="foto4.jpg" alt="Foto 4" onclick="openLightbox(this.src)">
+<img src="foto5.jpg" alt="Foto 5" onclick="openLightbox(this.src)">
+<img src="foto6.jpg" alt="Foto 6" onclick="openLightbox(this.src)">
+
 </div>
 
-<section id="contact">erstuur(event)">
+</section>
 
-<input type="text"
-placeholder="Uw naam"
-required>
+<div id="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img" src="" alt="">
+</div>
 
-<input type="email"
-placeholder="Uw e-mailadres"
-required>
+<section id="submit="verstuur(event)">
 
-<textarea
-rows="5"
-placeholder="Uw bericht"
-required></textarea>
+<input type="text" placeholder="Uw naam" required>
+
+<input type="email" placeholder="Uw e-mailadres" required>
+
+<textarea rows="5" placeholder="Uw bericht" required></textarea>
 
 <button class="btn" type="submit">
 Versturen
