@@ -17,7 +17,7 @@ html{
 }
 
 body{
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
     background:#f5f5f5;
     color:#333;
     line-height:1.6;
@@ -46,7 +46,7 @@ nav a:hover{
 
 header{
     height:100vh;
-    background:url('header.jpg') center center / cover no-repeat;
+    background:url('header.jpg') center center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -103,6 +103,7 @@ h2{
     box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* Pinterest-stijl galerij */
 .gallery{
     column-count:3;
     column-gap:20px;
@@ -116,7 +117,7 @@ h2{
     cursor:pointer;
     break-inside:avoid;
     box-shadow:0 2px 10px rgba(0,0,0,.15);
-    transition:.3s;
+    transition:0.3s;
 }
 
 .gallery img:hover{
@@ -129,7 +130,7 @@ h2{
     }
 }
 
-@media(max-width:600px){
+@media(max-width:650px){
     .gallery{
         column-count:1;
     }
@@ -212,7 +213,6 @@ Het hout wordt met de hand verwerkt tot unieke producten met karakter.
 </section>
 
 <section id="producten">
-
 <h2>Onze Producten</h2>
 
 <div class="cards">
@@ -220,4 +220,88 @@ Het hout wordt met de hand verwerkt tot unieke producten met karakter.
 <div class="card">
 <h3>Houten Kommen</h3>
 <p>Met de hand gedraaid uit lokaal hout.</p>
-</div
+</div>
+
+<div class="card">
+<h3>Snijplanken</h3>
+<p>Duurzaam en uniek.</p>
+</div>
+
+<div class="card">
+<h3>Maatwerk</h3>
+<p>Persoonlijke creaties op aanvraag.</p>
+</div>
+
+</div>
+</section>
+
+<section id="galerij">
+
+<h2>Fotogalerij</h2>
+
+<p>Klik op een foto om deze groter te bekijken.</p>
+
+<div class="gallery">
+
+<img src="foto1.jpg" alt="Foto 1" onclick="openLightbox(this.src)">
+<img src="foto2.jpg" alt="Foto 2" onclick="openLightbox(this.src)">
+<img src="foto3.jpg" alt="Foto 3" onclick="openLightbox(this.src)">
+<img src="foto4.jpg" alt="Foto 4" onclick="openLightbox(this.src)">
+<img src="foto5.jpg" alt="Foto 5" onclick="openLightbox(this.src)">
+<img src="foto6.jpg" alt="Foto 6" onclick="openLightbox(this.src)">
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<form onsubmit="verstuur(event)">
+
+<input type="text" placeholder="Uw naam" required>
+
+<input type="email" placeholder="Uw e-mailadres" required>
+
+<textarea rows="5" placeholder="Uw bericht" required></textarea>
+
+<button class="btn" type="submit">
+Versturen
+</button>
+
+</form>
+
+<p id="melding"></p>
+
+</section>
+
+<footer>
+© 2026 WoodworkingBrothers
+</footer>
+
+<div id="lightbox" onclick="closeLightbox()">
+<img id="lightboxImage" alt="Vergrote foto">
+</div>
+
+<script>
+
+function openLightbox(src){
+    document.getElementById('lightbox').style.display='flex';
+    document.getElementById('lightboxImage').src=src;
+}
+
+function closeLightbox(){
+    document.getElementById('lightbox').style.display='none';
+}
+
+function verstuur(e){
+    e.preventDefault();
+    document.getElementById('melding').innerHTML =
+    'Bedankt! Uw bericht is verzonden.';
+}
+
+</script>
+
+</body>
+</html>
